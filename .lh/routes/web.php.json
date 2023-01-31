@@ -1,0 +1,30 @@
+{
+    "sourceFile": "routes/web.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1675079077243,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1675079100375,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,5 +15,5 @@\n \n Route::get('/', function () {\n     return view('welcome');\n });\n-Route::get('/select-file','UploadFile@view');\n+Route::get('/select-file',[UploadFile@view');\n"
+                },
+                {
+                    "date": 1675079132971,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,5 +15,5 @@\n \n Route::get('/', function () {\n     return view('welcome');\n });\n-Route::get('/select-file',[UploadFile@view');\n+Route::get('/select-file','UploadFile@view');\n"
+                },
+                {
+                    "date": 1675079817015,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,4 +16,5 @@\n Route::get('/', function () {\n     return view('welcome');\n });\n Route::get('/select-file','UploadFile@view');\n+Route::post('/upload','UploadFile@upload');\n"
+                }
+            ],
+            "date": 1675079077243,
+            "name": "Commit-0",
+            "content": "<?php\n\nuse Illuminate\\Support\\Facades\\Route;\n\n/*\n|--------------------------------------------------------------------------\n| Web Routes\n|--------------------------------------------------------------------------\n|\n| Here is where you can register web routes for your application. These\n| routes are loaded by the RouteServiceProvider within a group which\n| contains the \"web\" middleware group. Now create something great!\n|\n*/\n\nRoute::get('/', function () {\n    return view('welcome');\n});\nRoute::get('/select-file','UploadFile@view');\n"
+        }
+    ]
+}

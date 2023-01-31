@@ -1,0 +1,30 @@
+{
+    "sourceFile": "app/Http/Controllers/UploadFile.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1675079077109,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1675079192118,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,6 +5,9 @@\n use Illuminate\\Http\\Request;\n \n class UploadFile extends Controller\n {\n-    \n+    public function view()\n+    {\n+        dd('ok');\n+    }\n }\n"
+                },
+                {
+                    "date": 1675079396054,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,7 +7,7 @@\n class UploadFile extends Controller\n {\n     public function view()\n     {\n-        dd('ok');\n+        return view ('fileUpload.view');\n     }\n }\n"
+                },
+                {
+                    "date": 1675079763581,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,5 +9,26 @@\n     public function view()\n     {\n         return view ('fileUpload.view');\n     }\n+    public function upload(Request $request)\n+    {\n+        if ($request->hasFile('files')) \n+        {\n+            $files = $request->file('files');\n+            $uploaded = []; $failed = [];\n+            foreach ($files as $file) \n+            {\n+                $fileName = time().'_'.$file->getClientOriginalName();\n+                if ($file->storeAs('uploads', $fileName)) \n+                {\n+                    $uploaded[] = $fileName;\n+                } \n+                else \n+                {\n+                    $failed[] = $fileName;\n+                }\n+            }\n+            // Return response indicating success or failure of file uploads\n+        }\n+    }\n }\n"
+                }
+            ],
+            "date": 1675079077109,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace App\\Http\\Controllers;\n\nuse Illuminate\\Http\\Request;\n\nclass UploadFile extends Controller\n{\n    \n}\n"
+        }
+    ]
+}
